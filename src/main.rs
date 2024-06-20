@@ -300,7 +300,7 @@ fn cv_simple() {
     println!("checking if condition passes...");
     // La variabile number to check può essere rinominata in qualsiasi modo nella condition! è quello che il lock protegge come
     // parametro (se c'è una tupla, la tupla altrimenti una struct o qualsiasi altra variabile protetta)
-    number_to_check = cv.wait_while(number_to_check, |suca| {*suca < 10}).unwrap();
+    number_to_check = cv.wait_while(number_to_check, |bau| {*bau < 10}).unwrap();
     println!("condition passed!!!");
 
     
