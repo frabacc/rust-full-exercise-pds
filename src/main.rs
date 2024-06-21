@@ -395,6 +395,19 @@ fn deref() {
 
 use std::collections::HashMap;
 
+fn hash_map_example() {
+    let mut hm = HashMap::new();
+    hm.insert(3, "bau");
+
+    match hm.get(&3) {
+        Some(value) => {
+            println!("valore => {}", value);
+        }
+        None => { println!("valore non trovato.");}
+    }
+
+}
+
 
 
 fn main() {
@@ -404,19 +417,5 @@ fn main() {
     //cv_simple();
     //rwlock_example();
     //deref();
-
-    let mut hm = HashMap::new();
-
-    hm.insert(3, "bau");
-
-    
-
-    match hm.get(&3) {
-        Some(value) => {
-            println!("valore => {}", value);
-        }
-        None => { println!("valore non trovato.");}
-    }
-
-    
+    //hash_map_example();
 }
