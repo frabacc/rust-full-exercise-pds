@@ -379,6 +379,12 @@ fn rwlock_example() {
     
 }
 
+fn deref() {
+    let c = Cerchio{r: 12.0};
+
+    println!("{:?} -> {:p}",c.deref(),c.deref());
+}
+
 
 
 fn main() {
@@ -387,8 +393,6 @@ fn main() {
     //duration_and_time();
     //cv_simple();
     //rwlock_example();
-
-    let c = Cerchio{r: 12.0};
-
-    println!("{:p}",c.deref());
+    //deref()
+    
 }
