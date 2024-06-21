@@ -24,7 +24,7 @@ use std::cmp::Ordering;
 use std::panic::{self, UnwindSafe};
 use std::fmt::Debug;
 use std::sync::{mpsc, Arc, Condvar, Mutex, RwLock};
-use std::ops::Deref;
+use std::ops::{Deref, DerefMut};
 
 use rand::Rng;
 
@@ -86,6 +86,12 @@ impl Deref for Cerchio {
     type Target = f64;
     fn deref(&self) -> &Self::Target {
         &self.r
+    }
+}
+
+impl DerefMut for Cerchio {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.r
     }
 }
 
@@ -380,10 +386,14 @@ fn rwlock_example() {
 }
 
 fn deref() {
-    let c = Cerchio{r: 12.0};
+    let mut c = Cerchio{r: 12.0};
 
-    println!("{:?} -> {:p}",c.deref(),c.deref());
+    println!("{:?} -> {:p}",c.deref(),c.deref()); //{:p} è l'indirizzo del puntatore
+    *c = 15.0;
+    println!("{:?} -> {:p}",c.deref(),c.deref()); //ora il valore r è stato modificato
 }
+
+use std::collections::HashMap;
 
 
 
@@ -393,6 +403,20 @@ fn main() {
     //duration_and_time();
     //cv_simple();
     //rwlock_example();
-    //deref()
+    //deref();
+
+    let mut hm = HashMap::new();
+
+    hm.insert(3, "bau");
+
+    
+
+    match hm.get(&3) {
+        Some(value) => {
+            println!("valore => {}", value);
+        }
+        None => { println!("valore non trovato.");}
+    }
+
     
 }
