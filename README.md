@@ -1,4 +1,4 @@
-# Raccolta codici frequenti esercizio 5 Rust 
+# Raccolta codici frequenti esercizio 4 Rust 
 
 Questo repository contiene una raccolta di esempi di programmazione in 
 Rust che possono essere utilizzati per testare le conoscenze in previsione
