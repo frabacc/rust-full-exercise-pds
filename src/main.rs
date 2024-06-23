@@ -9,6 +9,7 @@
         - Possiamo inserire con una cv su un lock in questo modo 6.
         - Per definire degli interi usiamo gli usize
         - Quando il professore scrive "accessi in lettura possono essere maggiori delle scritture", usare RwLock.
+        - All'interno delle HashMap se il valore è una struttura inseriamo una tupla, per piacere.
 */
 
 
