@@ -8,6 +8,7 @@
         - Nel punto 4. abbiamo anche una funzione che testa se panica, grazie alla std::panic::panic_unwind
         - Possiamo inserire con una cv su un lock in questo modo 6.
         - Per definire degli interi usiamo gli usize
+        - Quando il professore scrive "accessi in lettura possono essere maggiori delle scritture", usare RwLock.
 */
 
 
